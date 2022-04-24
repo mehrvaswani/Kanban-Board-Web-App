@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="css/kanban2.css" rel="stylesheet" />
+  <title>Welcome</title>
+</head>
+
+<body>
+  <!-- Some HTML elements so we can initiate our API calls & display the results --->
+  <h1 class="h1auth">KANBAN <br> CENTRAL</h1>
+  <div class="container">
+
+    <div class="signup">
+      <form action="/" method="post">
+
+        <div class="tab-group">
+          <button type="button" class="signupTab" id="signupbtn"><strong>Sign
+              Up</strong></button>
+          <button type="button" class="loginTab" id="loginbtn"><strong>Log In</strong></button>
+        </div>
+
+        <div id="signupFields">
+          <div class="input_field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="input_field">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password" required />
+          </div>
+          <div class="input_field">
+            <label>Confirm Password</label>
+            <input type="password" name="password" placeholder="Re-type Password" required />
+          </div>
+
+          <section id="private">
+            <div id="private_msg"></div>
+            <button id="signup_button">Sign Up</button>
+          </section>
+        </div>
+
+        <div class="login" id="loginFields">
+          <div class="input_field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="input_field">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password" required />
+          </div>
+
+          <section id="private">
+            <div id="private_msg"></div>
+            <button id="signup_button">Log In</button>
+          </section>
+        </div>
+    </div>
+
+    <div class="accessBoards" id="boards">
+      <h3>Access board using board code and secret key</h3>
+
+      <div class="input_field">
+        <label>Board Code</label>
+        <input type="text" name="boardCode" placeholder="Enter your board code." required />
+      </div>
+
+      <div class="input_field">
+        <label>Secret Key</label>
+        <input type="text" name="secretKey" placeholder="Enter your secret key." required />
+      </div>
+
+      <section id="private">
+        <div id="private_msg"></div>
+        <button id="signup_button">Access Board</button>
+      </section>
+    </div>
+    </form>
+  </div>
+
+
+
+
+
+</body>
+<script>
+
+  var defaultAuth = "signup";
+
+  window.onload = function () {
+    document.getElementById("signupbtn").onclick = auth;
+    document.getElementById("loginbtn").onclick = auth;
+  }
+
+  function auth() {
+    let login = document.getElementById("loginFields");
+    let signup = document.getElementById("signupFields");
+
+    document.getElementById("signupbtn").addEventListener('click', function (event) {
+
+      if (defaultAuth == "login") {
+        signup.style.display = "block";
+        login.style.display = "none";
+        document.getElementById("loginbtn").style.background = "rgba(203, 203, 203)";
+        document.getElementById("signupbtn").style.background = "rgba(255, 255, 255)";
+      }
+      defaultAuth = "signup";
+    });
+
+    document.getElementById("loginbtn").addEventListener('click', function (event) {
+      if (defaultAuth == "signup") {
+        signup.style.display = "none";
+        login.style.display = "block";
+        document.getElementById("signupbtn").style.background = "rgba(203, 203, 203)";
+        document.getElementById("loginbtn").style.background = "rgba(255, 255, 255)";
+      }
+      defaultAuth = "login";
+
+    });
+  }
+</script>
+
+</html>

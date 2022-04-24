@@ -1,0 +1,457 @@
+h1.h1auth {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    margin: 1% 0 0 1%;
+}
+
+body {
+    background-image: url("bg.jpg");
+    background-size: 1600px;
+}
+
+.default {
+    display:none;
+}
+
+.kanban-board {
+    padding-top: 1%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 90%;
+    min-width: 70%;
+    margin: auto;
+}
+
+.start {
+    margin-top: 5%;
+    visibility: visible;
+}
+
+.set {
+    margin: auto;
+    position: relative;
+    min-width: 30%;
+    min-height: 60%;
+    max-height: 80%;
+    max-width: 40%;  
+}
+
+.set button{
+    display: block;
+    background: rgb(222, 165, 23); 
+    border-radius: 8px;
+    height: 8%;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 3% 0 3% 0;
+    margin-top: 3%;
+    vertical-align: middle;
+}
+
+.modal{
+    display: none; /* Hidden by default */
+    margin: auto;
+    position:relative;
+    background:rgba(255, 255, 255,0.90);
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    min-width: 30%;
+    min-height: 60%;
+    max-height: 80%;
+    max-width: 40%; 
+}
+
+.modal p {
+    text-align: left;
+    font-size: 1.1em;
+    color: black;
+    padding: 5%;
+    display: inline;
+}
+
+.board-code, .board-title {
+    text-align: left;
+    font-size: 1.1em;
+    color: black;
+    padding: 2% 0 5% 5%;
+}
+
+.board-code [type="text"] {
+    width: 50%;
+    height: 3%;
+}
+
+.board-title [type="text"] {
+    width: 50%;
+    height: 3%;
+}
+
+.btn{
+    background: rgb(222, 165, 23); 
+    border-radius: 8px;
+    height: 10%;
+    width: 60%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 3% 0 3% 0;
+    margin: 0 0 5% 20%;
+    vertical-align: middle;
+}
+
+.cancelTask {
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1%;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close{
+    color: rgb(0, 0, 0);
+  float: right;
+  position: relative;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 2% 5% 3% 90%;
+}
+
+#addColumn{
+    display:none;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.task-details{
+    display: none;
+    border-radius: 5px;
+    background: #ffaf00;
+    width: 40%;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0.2rem;
+}
+
+.form-row-label {
+    width: 15%;
+    padding: 0.2rem;
+    padding-right: 0.5rem;
+    border: 0.1rem solid black;
+    border-right: 0;
+    border-radius: 0.2rem 0rem 0rem 0.2rem;
+}
+  
+.form-row-input {
+    border: 0.1rem solid black;
+    border-radius: 0rem 0.2rem 0.2rem 0rem;
+    width: 85%;
+}
+  
+textarea {
+    resize: none;
+}
+  
+
+.form-row-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.2rem;
+} 
+  
+#save-button, #delete-button {
+    margin: 0.2rem 0rem 0.1rem 0rem;
+    background-color: white;
+    border-radius: 0.2rem;
+    width: 49.2%;
+    border: 0.25rem solid black;
+    padding: 0.5rem 2.7rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+}
+
+#myUL {
+    border: #333;
+}
+
+#add-button {
+    margin: 0.2rem 0rem 0.1rem 0.2rem;
+    background-color: white;
+    border-radius: 0.2rem;
+    width: 98%;
+    border: 0.25rem solid black;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+.test {
+    width: 100%;
+}
+
+.kanban-block{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    margin: 5px;
+    min-width: 30%;
+    min-height: 20%;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.task-card{
+  background-color: white;
+  margin: 0.2rem 0rem 0.3rem 0rem;  border-radius: 0.2rem;
+  padding: 0.5rem 0.2rem 0.5rem 2rem;
+  -webkit-user-drag: element;
+  cursor: grab;
+  display: block;
+  position: relative;
+  list-style: none;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  min-height: 30%;
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  font-size: 16px;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  margin: 5px 0;
+  padding: 5px 10px;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.task-card:hover{
+    background: #fff;
+}
+
+button#task-card-button{
+  border: none;
+  background-color: rgb(47, 95, 81);
+  border-radius: 8px;
+  min-width: 40%;
+  height: 20%;
+  padding: 0.5rem 2.7rem;
+  margin-top: 2%;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 2px 1px rgba(152, 151, 149, 0.844);
+}
+button#task-card-button-remove{
+    border: none;
+    background-color:  rgb(222, 165, 23); 
+    border-radius: 8px;
+    min-width: 40%;
+    height: 20%;
+    padding: 0.5rem 2.7rem;
+    margin-top: 2%;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 2px 1px rgba(152, 151, 149, 0.844);
+}
+
+.signup{
+  margin: auto;
+  position:relative;
+  background:rgba(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  min-width: 30%;
+  min-height: 60%;
+  max-height: 80%;
+  max-width: 40%;  
+}
+
+.accessBoards {
+    margin: auto;
+    background:rgba(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    min-width: 30%;
+    min-height: 80%;
+    max-height: 100%;
+    max-width: 40%;   
+}
+
+#log-in, #private{
+    text-align: center;
+}
+
+.input_field {
+    display: block;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    text-align: left;
+}
+
+[type="email"], [type="password"] {
+  width: 100%;
+  padding: auto;
+  height: 35px;
+  border: 1px solid $grey;
+  box-sizing: border-box;
+  outline: none;
+}
+
+[type="email"]:focus, [type="password"]:focus {
+    -webkit-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+    -moz-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+    box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+    border: 1px solid yellow;
+}
+
+[type="text"] {
+    width: 100%;
+    padding: auto;
+    height: 35px;
+    border: 1px solid $grey;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#access-board {
+    background: rgb(222, 165, 23); 
+    height: 35px;
+    border-radius: 8px;
+    line-height: 35px;
+    width: 60%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1em;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}   
+
+h3 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    margin: 15px 0 0 0;
+    padding-top: 15px;
+}
+
+#signup_button:hover {
+    background: rgb(194, 169, 106); 
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.tab-group {
+    width: 100%;
+    margin: auto;
+    list-style: none;
+    align-content: center;
+    padding: 0px;
+    display: inline-block;
+}
+
+.tab-group button{
+    width: 50%;
+    border: none;
+    float: left;
+    cursor: pointer;
+    padding: 3% 0 3% 0;
+    vertical-align: middle;
+    border-radius: 10px 10px 0 0px;
+    font-size: large;
+}
+
+button.loginTab {
+    border-radius: 0 10px 0 0;
+    background:rgba(203, 203, 203);
+}
+
+button.signupTab {
+    border-radius: 10px 0 0 0;
+    background:rgba(255, 255, 255);
+}
+
+.signup {
+    display: block;
+}
+
+.login {
+  display: none;
+}
+
+.addColumn {
+    margin: auto;
+    position:relative;
+    background:rgba(255, 255, 255,0.90);
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    min-width: 20%;
+    min-height: 40%;
+    max-height: 50%;
+    max-width: 30%; 
+}
+.addColumn button {
+    background: rgb(222, 165, 23); 
+    border-radius: 8px;
+    height: 10%;
+    width: 40%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    cursor: pointer;
+    margin: 2% 30% 2% 30%;
+    vertical-align: middle;
+}
+
+.addColumn label {
+    text-align: left;
+    font-size: 1.1em;
+    color: black;
+    padding: 2% 2% 2% 2%;
+    margin-left: 2%;
+}
+
+.input-column[type="text"] {
+    margin-top: 2%;
+    width: 50%;
+    height: 3%;
+}
+
+
+
+
+

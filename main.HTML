@@ -1,0 +1,135 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KANBAN</title>
+    <!-- don't forget to remove the 'css/' when trying to run on live server' -->
+    <link href="css/kanban2.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <h1 class="h1auth" id="title"></h1>
+
+    <div class="start" id="start">
+        <div class="set-buttons" id="set-buttons">
+            <div class="set">
+                <button type="button" id="default">Create A Default Board</button>
+                <button type="button" id="custom">Create A Custom Board</button>
+            </div>
+        </div>
+
+        <div class="accessBoards" id="boards">
+            <h3>Access board using board code and secret key</h3>
+
+            <div class="input_field">
+                <label>Board Code</label>
+                <input type="text" id="boardCode" placeholder="Enter your board code." required />
+            </div>
+
+            <div class="input_field">
+                <label>Secret Key</label>
+                <input type="text" name="secretKey" placeholder="Enter your secret key." required />
+            </div>
+
+            <section id="private">
+                <div id="private_msg"></div>
+                <button id="access-board">Access Board</button>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="modal" id="modal">
+        <div class="close">
+            <span>&times;</span>
+        </div>
+        <div>
+            <!-- <p>Your secret key is: </p>
+            <p id="sk"></p> -->
+            <div class="board-code">
+                <label> Board Code: </label>
+                <input type="text" id="board-code">
+            </div>
+            <div class="board-title">
+                <label> Board Title: </label>
+                <input type="text" id="board-title">
+            </div>
+            <button class="btn" type="button" id="save">Save</button>
+        </div>
+    </div>
+
+    <div class="default" id="def">
+        <div class="kanban-board">
+            <div class="kanban-block" id="todo">
+                <h2>To Do</h2>
+                <div class="task-div" id="todo-div">
+                </div>
+                <div class="task-card-button-block">
+                    <button id="task-card-button">Create New Task</button>
+                </div>
+            </div>
+
+            <div class="kanban-block" id="inprogress-div">
+                <h2>In Progress</h2>
+
+            </div>
+
+            <div class="kanban-block" id="done-div">
+                <h2>Completed</h2>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="task-details" id="task-details">
+        <span class="cancelTask" id="cancelTask">&times;</span>
+        <span class="form-row">
+            <label class="form-row-label" for="task-name">Task</label>
+            <input class="form-row-input" type="text" name="task-name" id="task-name">
+        </span>
+        <span class="form-row">
+            <label class="form-row-label" for="task-name">Description</label>
+            <textarea class="form-row-input" name="task-description" id="task-description" cols="10"
+                rows="5"></textarea>
+        </span>
+        <span class="form-row">
+            <label class="form-row-label" for="task-name">Status</label>
+            <select class="form-row-input" name="task-status" id="task-status">
+                <option value="todo">To Do</option>
+                <option value="inprogress">In Progress</option>
+                <option value="done">Done</option>
+            </select>
+        </span>
+        <span class="form-row">
+            <div id="myUL"></div>
+
+        </span>
+        <button id="add-button">Add Subtask</button>
+        <span class="form-row-buttons">
+            <button id="save-button">Save</span>
+        <button id="delete-button">Delete</span>
+            </span>
+    </div>
+
+    <div class="custom" id="custom">
+        <div class="addColumn" id="addColumn">
+            <div class="add-column-settings">
+                <label> Column Title: </label>
+                <input type="text" id="column-title" class="input-column">
+                <label> Column Position: </label>
+                <input type="text" id="column-position" class="input-column">
+                <button type="button" id="addColumnButton">Add Column</button>
+            </div>
+        </div>
+        <div class="kanban-board" id="kanban-board">
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+
+</html>
